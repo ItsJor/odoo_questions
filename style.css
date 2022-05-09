@@ -1,0 +1,24 @@
+.grid_container {
+    height: 80vh;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid black;
+}
+
+.grid_larger {
+    grid-column-end: span 3;
+    background-color: gray;
+    font-size: 2rem;
+    display: flex;
+    justify-content: end;
+    padding-right: 4rem;
+    align-items: center;
+}
+
+.grid_item {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
