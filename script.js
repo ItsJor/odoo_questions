@@ -15,8 +15,18 @@ function start(){
         })
     };
 
-    getRandom.addEventListener("click", ()=> {
-        getDisplay.innerText = Math.floor(Math.random() * 500);
+    getRandom.addEventListener("click", async ()=> {
+        //getDisplay.innerText = Math.floor(Math.random() * 500);
+        try {
+            let get = await fetch('https://www.random.org/integers/?num=1&min=1&max=1000&col=1&base=10&format=plain&rnd=new,');
+            let change = await get.json();
+            getDisplay.innerHTML= change;
+        }
+        catch (error) {
+            console.log(error);
+            getDisplay.innerText = Math.floor(Math.random() * 500);
+        }
+
     })
 
     getStart.addEventListener('click', ()=> {
